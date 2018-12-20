@@ -17,7 +17,7 @@ namespace ProjekatFinalni.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Skola()
         {
-            this.Kontakts = new HashSet<Kontakt>();
+            this.Kontakt = new HashSet<Kontakt>();
         }
     
         public int SkolaID { get; set; }
@@ -31,17 +31,8 @@ namespace ProjekatFinalni.Models
         public string WebStranica { get; set; }
         public byte[] Fotografija { get; set; }
         public string Beleska { get; set; }
-        public List<Kontakt> Kontakti { get; set; }
-
-        internal void NapraviKontakta(int count = 1)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                Kontakts.Add(new Kontakt());
-            }
-        }
-
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Kontakt> Kontakts { get; set; }
+        public virtual ICollection<Kontakt> Kontakt { get; set; }
     }
 }

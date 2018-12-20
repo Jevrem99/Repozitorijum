@@ -13,8 +13,13 @@ namespace ProjekatFinalni.Controllers
         public ActionResult Index(int skolaid)
         {
             BazaProjekatEntities bazaKontakt = new BazaProjekatEntities();
-            List<Kontakt> kontakti = bazaKontakt.Kontakts.Where(x => x.SkolaID == skolaid).ToList();
-            return View(kontakti);
+            List<Kontakt> kontakti = bazaKontakt.Kontakt.Where(x => x.SkolaID == skolaid).ToList();
+
+            Zajedno zajednomodel = new Zajedno();
+
+            List<Zajedno> kontaktiskola = kontakti.Select(x => new Zajedno{ Ime = x.Ime, KontaktID = x.KontaktID, Prezime = x.Prezime ,RadnoMesto = x.RadnoMesto, NazivSkole = x.Skola.NazivSkole, AdresaRegistracije = x.Skola.AdresaRegistracije, Opstina=x.Skola.Opstina, SkolaID = x.SkolaID}).ToList();
+
+            return View(kontaktiskola);
         }
     }
 }

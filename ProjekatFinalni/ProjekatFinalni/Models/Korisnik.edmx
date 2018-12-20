@@ -13,8 +13,8 @@
           <Property Name="Korisnickoime" Type="varchar" MaxLength="50" />
           <Property Name="Lozinka" Type="varchar" MaxLength="50" />
           <Property Name="DaLiJeAdmin" Type="bit" />
-          <Property Name="PravoUnosa" Type="bit" />
           <Property Name="Gost" Type="bit" />
+          <Property Name="PravoUnosa" Type="bit" />
         </EntityType>
         <EntityContainer Name="BazaProjekatModel1StoreContainer">
           <EntitySet Name="Korisnik" EntityType="Self.Korisnik" Schema="dbo" store:Type="Tables" />
@@ -32,27 +32,27 @@
           <Property Name="Korisnickoime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Lozinka" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DaLiJeAdmin" Type="Boolean" />
-          <Property Name="PravoUnosa" Type="Boolean" />
           <Property Name="Gost" Type="Boolean" />
+          <Property Name="PravoUnosa" Type="Boolean" />
         </EntityType>
-        <EntityContainer Name="BazaProjekatEntities3" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Korisniks" EntityType="Self.Korisnik" />
+        <EntityContainer Name="BazaProjekatEntities4" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Korisnik" EntityType="Self.Korisnik" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BazaProjekatModel1StoreContainer" CdmEntityContainer="BazaProjekatEntities3">
-          <EntitySetMapping Name="Korisniks">
+        <EntityContainerMapping StorageEntityContainer="BazaProjekatModel1StoreContainer" CdmEntityContainer="BazaProjekatEntities4">
+          <EntitySetMapping Name="Korisnik">
             <EntityTypeMapping TypeName="BazaProjekatModel1.Korisnik">
               <MappingFragment StoreEntitySet="Korisnik">
                 <ScalarProperty Name="KorisnikID" ColumnName="KorisnikID" />
                 <ScalarProperty Name="Korisnickoime" ColumnName="Korisnickoime" />
                 <ScalarProperty Name="Lozinka" ColumnName="Lozinka" />
                 <ScalarProperty Name="DaLiJeAdmin" ColumnName="DaLiJeAdmin" />
-                <ScalarProperty Name="PravoUnosa" ColumnName="PravoUnosa" />
                 <ScalarProperty Name="Gost" ColumnName="Gost" />
+                <ScalarProperty Name="PravoUnosa" ColumnName="PravoUnosa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -70,7 +70,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

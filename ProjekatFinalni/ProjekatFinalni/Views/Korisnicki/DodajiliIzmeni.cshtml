@@ -1,6 +1,6 @@
 ﻿@model ProjekatFinalni.Models.Korisnik
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Registracija";
 }
 <h2>Registracija Korisnika</h2>
 
@@ -34,50 +34,53 @@
             @Html.ValidationMessageFor(model => model.PotvrdiLozinku, "", new { @class = "text-danger" })
         </div>
     </div>
-  
-        <div class="form-group">
-            @Html.LabelFor(model => model.DaLiJeAdmin, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.DaLiJeAdmin)
-                    @Html.ValidationMessageFor(model => model.DaLiJeAdmin, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.Gost, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Gost)
-                    @Html.ValidationMessageFor(model => model.Gost, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.PravoUnosa, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.PravoUnosa)
-                    @Html.ValidationMessageFor(model => model.PravoUnosa, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        </div>
-        
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Kreiraj" class="btn btn-default" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-2">
-                <label class="label-success">@ViewBag.SuccessMessage</label>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DaLiJeAdmin, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.DaLiJeAdmin)
+                @Html.ValidationMessageFor(model => model.DaLiJeAdmin, "", new { @class = "text-danger" })
             </div>
         </div>
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gost, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.Gost)
+                @Html.ValidationMessageFor(model => model.Gost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PravoUnosa, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <div class="checkbox">
+                @Html.EditorFor(model => model.PravoUnosa)
+                @Html.ValidationMessageFor(model => model.PravoUnosa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Kreiraj" class="btn btn-default" />
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-2">
+            <label class="label-success">@ViewBag.SuccessMessage</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-2">
+            <label class="label-danger">@ViewBag.DuplicateMessage</label>
+        </div>
+    </div>
+</div>
     }
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+  
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }

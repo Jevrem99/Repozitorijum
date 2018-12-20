@@ -14,7 +14,7 @@ namespace ProjekatFinalni.Models
     
     public partial class Telefon
     {
-        public int BrojTelefona { get; set; }
+        public string BrojTelefona { get; set; }
         public string OznakaTipa { get; set; }
         public string Lokal { get; set; }
         public int KontaktID { get; set; }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\user\Source\Repos\Repozitorijum\ProjekatFinalni\ProjekatFinalni\Models\BazaSkola.edmx'. 
+﻿// T4 code generation is enabled for model 'G:\Users\Korisnik\Desktop\Projektni Zadatak5\Repozitorijum\ProjekatFinalni\ProjekatFinalni\Models\BazaSkola.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

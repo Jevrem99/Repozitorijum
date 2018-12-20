@@ -18,7 +18,7 @@ namespace ProjekatFinalni.Controllers
         [HttpPost]
         public ActionResult Odobri(ProjekatFinalni.Models.Korisnik korisnikModel)
         {
-            using (BazaProjekatEntities3 db = new BazaProjekatEntities3())
+            using (BazaProjekatEntities4 db = new BazaProjekatEntities4())
             {
                 var korisnikPodaci = db.Korisniks.Where(x => x.Korisnickoime == korisnikModel.Korisnickoime && x.Lozinka == korisnikModel.Lozinka).FirstOrDefault();
                 if(korisnikPodaci==null)
@@ -29,12 +29,21 @@ namespace ProjekatFinalni.Controllers
                 else
                 {
                     Session["korisnikID"] = korisnikPodaci.KorisnikID;
-                   
-                        return RedirectToAction("Index", "Pocetna");
+                    Session["korisnikIme"] = korisnikPodaci.Korisnickoime;
+                    Session["Admin"] = korisnikPodaci.DaLiJeAdmin;
+                    Session["Gost"] = korisnikPodaci.Gost;
+                    Session["SamoUnos"] = korisnikPodaci.PravoUnosa;
+                        return RedirectToAction("Index", "Skola");
                     
                 }
             }
                
+        }
+        
+        public ActionResult Izloguj()
+        {
+            Session.Abandon();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

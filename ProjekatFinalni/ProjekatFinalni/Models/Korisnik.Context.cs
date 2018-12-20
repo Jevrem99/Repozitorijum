@@ -13,10 +13,10 @@ namespace ProjekatFinalni.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BazaProjekatEntities3 : DbContext
+    public partial class BazaProjekatEntities4 : DbContext
     {
-        public BazaProjekatEntities3()
-            : base("name=BazaProjekatEntities3")
+        public BazaProjekatEntities4()
+            : base("name=BazaProjekatEntities4")
         {
         }
     

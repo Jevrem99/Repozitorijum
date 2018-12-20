@@ -1,0 +1,66 @@
+﻿@model IEnumerable<ProjekatFinalni.Models.Korisnik>
+
+@{
+    ViewBag.Title = "Izlistaj";
+}
+
+<h2>Korisnici</h2>
+
+<p>
+    @Html.ActionLink("Napravi novog korisnika", "DodajiliIzmeni", "Korisnicki")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Korisnickoime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lozinka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DaLiJeAdmin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PravoUnosa)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Korisnickoime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lozinka)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DaLiJeAdmin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PravoUnosa)
+        </td>
+        <td>
+            @{
+                string admin = Session["Admin"].ToString();
+
+                if (admin == "True")
+                {
+                    <p>@Html.ActionLink("Izmeni", "Edit", new { id = item.KorisnikID })</p>
+
+                    <p>@Html.ActionLink("Delete", "Delete", new { id = item.KorisnikID })</p>
+
+                   <p> @Html.ActionLink("Resetuj Lozinku", "Edit2", new { id = item.KorisnikID })</p>
+                }
+            }
+        </td>
+    </tr>
+            }
+
+</table>

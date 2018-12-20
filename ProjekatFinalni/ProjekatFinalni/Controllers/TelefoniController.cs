@@ -13,7 +13,7 @@ namespace ProjekatFinalni.Controllers
         public ActionResult Index(int tkontaktid)
         {
             BazaProjekatEntities bazaTelefoni = new BazaProjekatEntities();
-            List<Telefon> telefoni = bazaTelefoni.Telefons.Where(x => x.KontaktID == tkontaktid).ToList();
+            List<Telefon> telefoni = bazaTelefoni.Telefon.Where(x => x.KontaktID == tkontaktid).ToList();
             return View(telefoni);
         }
     }

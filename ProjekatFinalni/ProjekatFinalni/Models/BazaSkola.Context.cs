@@ -25,10 +25,10 @@ namespace ProjekatFinalni.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Kontakt> Kontakts { get; set; }
-        public virtual DbSet<MailAdresa> MailAdresas { get; set; }
-        public virtual DbSet<Skola> Skolas { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Telefon> Telefons { get; set; }
+        public virtual DbSet<Kontakt> Kontakt { get; set; }
+        public virtual DbSet<MailAdresa> MailAdresa { get; set; }
+        public virtual DbSet<Skola> Skola { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Telefon> Telefon { get; set; }
     }
 }

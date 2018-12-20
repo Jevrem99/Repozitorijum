@@ -1,13 +1,97 @@
-﻿@model IEnumerable<ProjekatFinalni.Models.Kontakt>
+﻿@model ProjekatFinalni.Models.Zajedno
 
 @{
     ViewBag.Title = "Index";
 }
+
 <h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SkolaID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NazivSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresaRegistracije)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaticniBrojSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PIB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojRacunaSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebStranica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beleska)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{ 
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.SkolaID)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.NazivSkole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdresaRegistracije)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opstina)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PostanskiBroj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaticniBrojSkole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PIB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojRacunaSkole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WebStranica)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Beleska)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+    }
+
+</table>
+
 <table class="table">
     <tr>
         <th>
@@ -23,45 +107,89 @@
             @Html.DisplayNameFor(model => model.SkolaID)
         </th>
         <th>
-            Lista Email Adresa
+            @Html.DisplayNameFor(model => model.KontaktID)
         </th>
         <th>
-            Lista Telefona
+            @Html.DisplayNameFor(model => model.NazivSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdresaRegistracije)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opstina)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PostanskiBroj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaticniBrojSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PIB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BrojRacunaSkole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WebStranica)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Beleska)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Prezime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RadnoMesto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SkolaID)
-        </td>
-        <td>
-            @Html.ActionLink("Email", "Index", "Email", new { kontaktid = item.KontaktID }, null)
-        </td>
-        <td>
-            @Html.ActionLink("Telefoni", "Index", "Telefoni", new { tkontaktid = item.KontaktID }, null)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.KontaktID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.KontaktID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.KontaktID })
-        </td>
-    </tr>
-
-}
+    @foreach (var item2 in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item2.Ime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.Prezime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.RadnoMesto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.SkolaID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.KontaktID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.NazivSkole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.AdresaRegistracije)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.Opstina)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.PostanskiBroj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.MaticniBrojSkole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.PIB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.BrojRacunaSkole)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.WebStranica)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item2.Beleska)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
 
 </table>
-
-<p>
-    @Html.ActionLink("Nazad", "Index", "Skola")
-</p>

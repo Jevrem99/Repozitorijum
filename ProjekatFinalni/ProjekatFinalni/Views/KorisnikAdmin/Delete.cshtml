@@ -1,0 +1,64 @@
+﻿@model ProjekatFinalni.Models.Korisnik
+
+@{
+    ViewBag.Title = "Obrisi";
+}
+
+<h2>Obrisi</h2>
+
+<h3>Da li ste sigurnni da hocete da obrisete ovog korisnika?</h3>
+<div>
+    <h4>Korisnik</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Korisnickoime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Korisnickoime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lozinka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lozinka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DaLiJeAdmin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaLiJeAdmin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PravoUnosa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PravoUnosa)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obrisi" class="btn btn-default" /> |
+            @Html.ActionLink("Nazad", "Izlistaj")
+        </div>
+    }
+</div>

@@ -17,8 +17,8 @@ namespace ProjekatFinalni.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Kontakt()
         {
-            this.MailAdresas = new HashSet<MailAdresa>();
-            this.Telefons = new HashSet<Telefon>();
+            this.MailAdresa = new HashSet<MailAdresa>();
+            this.Telefon = new HashSet<Telefon>();
         }
     
         public string Ime { get; set; }
@@ -26,28 +26,11 @@ namespace ProjekatFinalni.Models
         public string RadnoMesto { get; set; }
         public int SkolaID { get; set; }
         public int KontaktID { get; set; }
-
-        
-
-        internal void NapraviTelefon(int count = 1)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                Telefons.Add(new Telefon());
-            }
-        }
-
-        internal void NapraviEmail(int count = 1)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                MailAdresas.Add(new MailAdresa());
-            }
-        }
+    
         public virtual Skola Skola { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MailAdresa> MailAdresas { get; set; }
+        public virtual ICollection<MailAdresa> MailAdresa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Telefon> Telefons { get; set; }
+        public virtual ICollection<Telefon> Telefon { get; set; }
     }
 }

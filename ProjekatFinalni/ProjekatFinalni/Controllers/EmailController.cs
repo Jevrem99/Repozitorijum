@@ -13,7 +13,7 @@ namespace ProjekatFinalni.Controllers
         public ActionResult Index(int kontaktid)
         {
             BazaProjekatEntities bazaEmail = new BazaProjekatEntities();
-            List<MailAdresa> email = bazaEmail.MailAdresas.Where(x => x.KontaktID == kontaktid).ToList();
+            List<MailAdresa> email = bazaEmail.MailAdresa.Where(x => x.KontaktID == kontaktid).ToList();
             return View(email);
         }
     }

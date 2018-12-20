@@ -19,8 +19,13 @@ namespace ProjekatFinalni.Controllers
         [HttpPost]
         public ActionResult DodajiliIzmeni(Korisnik korisnikmodel)
         {
-            using (BazaProjekatEntities3 Modelkorisnik = new BazaProjekatEntities3())
+            using (BazaProjekatEntities4 Modelkorisnik = new BazaProjekatEntities4())
             {
+                if(Modelkorisnik.Korisniks.Any(x=> x.Korisnickoime == korisnikmodel.Korisnickoime))
+                {
+                    ViewBag.DuplicateMessage = "Korisnicko ime vec postoji.";
+                    return View("DodajiliIzmeni", korisnikmodel);
+                }
                 Modelkorisnik.Korisniks.Add(korisnikmodel);
                 Modelkorisnik.SaveChanges();
             }
@@ -29,7 +34,7 @@ namespace ProjekatFinalni.Controllers
 
 
 
-            return View("DodajiliIzmeni", new Korisnik());
+            return RedirectToAction("Index", "Login");
         }
 
     }

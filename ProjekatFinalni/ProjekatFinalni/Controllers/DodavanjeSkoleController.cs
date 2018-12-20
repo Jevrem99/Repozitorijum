@@ -14,22 +14,18 @@ namespace ProjekatFinalni.Controllers
         {
             var skola = new Skola();
             var kontakt = new Kontakt();
-            skola.NapraviKontakta(1);
-            return View(skola);
+        
+            return View(skola); 
         }
         [HttpPost]
-        public ActionResult Novi(Skola skolica1)
+        public ActionResult Novi(Skola skolica1,Kontakt korisnik1)
         {
             BazaProjekatEntities bazaSkola = new BazaProjekatEntities();
-            if (ModelState.IsValid)
-            { 
-                bazaSkola.Skolas.Add(skolica1);
-                
-                
-                bazaSkola.SaveChanges();
+            //bazaSkola.Skolas.Add(skolica1);
+            //bazaSkola.Kontakts.Add(korisnik1);
+            //bazaSkola.SaveChanges();
+           
 
-
-            }
             return Redirect("Novi");
         }
     }

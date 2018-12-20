@@ -4,6 +4,8 @@
     ViewBag.Title = "Kontakt";
 }
 
+@Html.HiddenFor(x => x.KontaktID)
+
 <div class="kontatkiklasa">
     <p>
         <label>Kontakti</label>
@@ -31,20 +33,16 @@
                 </td>
             </tr>
         </table>
-
-        <div id="telefonizakontakt">
-            @Html.EditorFor(x => x.Telefons)
-        </div>
-
-    <p>
-        @Html.AddLink("Dodaj jos telefona", "#telefonizakontakt", ".telefonklasa", "Telefons", typeof(ProjekatFinalni.Models.Telefon))
-    </p>
-    <div id="emailzakontakt">
-        @Html.EditorFor(x => x.MailAdresas)
-    </div>
-    <p>
-        @Html.AddLink("Dodaj jos Emailova", "#emailzakontakt", ".emailklasa", "MailAdresas", typeof(ProjekatFinalni.Models.MailAdresa))
-    </p>
-
-    
 </div>
+
+
+<div id="telefonizakontakt">
+    @Html.EditorFor(x => x.Telefons)
+</div>
+
+
+
+<div id="emailzakontakt">
+    @Html.EditorFor(x => x.MailAdresas)
+</div>
+
